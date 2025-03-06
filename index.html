@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOV Sound Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            font-size: 100px;
+            color: black;
+            text-align: center;
+            position: relative;
+        }
+        #zov {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="zov">ZOV</div>
+    <audio id="background-sound" src="sound.mp3" preload="auto"></audio>
+
+    <script>
+        window.onload = function() {
+            const sound = document.getElementById('background-sound');
+            sound.play().catch(error => {
+                console.log("Ошибка воспроизведения звука: " + error);
+            });
+        };
+    </script>
+
+</body>
+</html>
